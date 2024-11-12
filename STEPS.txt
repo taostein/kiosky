@@ -1,0 +1,25 @@
+
+# 1. Download the movies
+sh dl-list.sh links.txt yt-dlp > do.sh
+sh do.sh
+# 2. Rename the files
+python3 rename.py > do2.sh
+sh do2.sh
+# 3. extract the audio
+python3 extract-audio.py > do3.sh
+sh do3.sh
+# 4. extract the BPM
+# 5. extract the key
+# 6. create the new filename
+# 7. Run demucs
+
+Can check the bitrates with:
+
+for f in `ls *.mp3`
+do
+ffprobe $f
+done 2>&1 | grep -e bitrate -e Input
+
+yt-dlp
+sonic visualizer
+
